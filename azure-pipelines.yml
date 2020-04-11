@@ -4,7 +4,15 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/windows/dot-net
 
 trigger:
-- master
+- dev-ng
+
+schedules:
+  - cron: "0 9 1 * *"
+    displayName: Monthly build
+    branches:
+      include:
+        - dev-ng
+    always: true
 
 pool:
   vmImage: 'windows-latest'
