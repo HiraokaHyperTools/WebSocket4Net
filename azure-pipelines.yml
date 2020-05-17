@@ -30,6 +30,7 @@ steps:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    msbuildArgs: '/t:BuildAndPack'
 
 - task: CopyFiles@2
   inputs:
